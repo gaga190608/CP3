@@ -14,7 +14,7 @@ export default function Contact() {
       <p className="mt-4 text-sm text-black/60 dark:text-white/60">
         Ou fale no Instagram/LinkedIn:
         {" "}
-        <a className="underline underline-offset-4" href="#" target="_blank" rel="noreferrer">@seuuser</a>
+        <a className="underline underline-offset-4" href="https://github.com/gaga190608" targe="_blank">@gaga190608</a>
       </p>
     </section>
   );

@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-neutral-950/70 border-b border-black/10 dark:border-white/10">
       <nav className="section flex items-center justify-between h-16">
-        <a href="#" className="text-lg font-bold tracking-tight">SeuNome<span className="text-black/50 dark:text-white/50">.dev</span></a>
+        <a href="#" className="text-lg font-bold tracking-tight">Gabrielle<span className="text-black/50 dark:text-white/50">Zollner .dev</span></a>
 
         <div className="hidden md:flex items-center gap-6 text-sm">
           <a href="#projects" className="hover:opacity-70">Projetos</a>
@@ -18,6 +18,8 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          
+          <Button as="a" href="https://github.com/gaga190608?tab=repositories" size="sm" target="_blank"> Todos os Projetos</Button>
           <Button as="a" href="#contact" size="sm" className="hidden sm:inline-flex">Fale comigo</Button>
           <button onClick={()=>setOpen(v=>!v)} className="md:hidden h-10 w-10 grid place-items-center rounded-xl border border-black/15 hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10" aria-label="Menu">
             <div className="i h-4 w-4 relative">
@@ -29,7 +31,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* mobile menu */}
+    
       {open && (
         <div className="md:hidden section pb-4">
           <div className="rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-white dark:bg-neutral-900">
