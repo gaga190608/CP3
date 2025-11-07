@@ -6,17 +6,18 @@
     <title>Gabrielle Calazans Zollner — Portfólio</title>
     <meta name="description" content="Portfólio de Gabrielle Calazans Zollner — Desenvolvedora Front-End (React, Vite, Tailwind). Projetos: Passa a Bola (Global Solution), Bot Lucinda.">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Gabrielle Calazans Zollner — Portfólio" />
     <meta property="og:description" content="Projetos em React e Tailwind. Global Solution: Passa a Bola. Bot de Psicologia: Lucinda." />
     <meta property="og:type" content="website" />
 
     <script>
+    try {
       const pref = localStorage.getItem('theme');
-      if (pref === 'dark' || (!pref && matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      }
-    </script>
+      const wantsDark = pref === 'dark' || (!pref && matchMedia('(prefers-color-scheme: dark)').matches);
+      if (wantsDark) document.documentElement.classList.add('dark');
+      else document.documentElement.classList.remove('dark');
+    } catch (e) {}
+  </script>
   </head>
   <body class="bg-white text-black dark:bg-neutral-950 dark:text-neutral-100">
     <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:p-2 focus:bg-black focus:text-white rounded">Ir para o conteúdo principal</a>
