@@ -1,5 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:focus-visible { outline: none; }
+@import "tailwindcss";

@@ -1,33 +1,13 @@
-import { useState } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-
 export default function App() {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
-
-  function toggleTheme() {
-    const newTheme = theme === "light" ? "dark" : "light";
-    document.documentElement.classList.toggle("dark");
-    localStorage.setItem("theme", newTheme);
-    setTheme(newTheme);
-  }
-
   return (
-    <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition">
-      <Header theme={theme} toggleTheme={toggleTheme} />
-      <main>
-        <Hero />
-        <Projects />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen grid place-items-center bg-gray-50">
+      <div className="max-w-md w-full p-6 rounded-2xl shadow-lg bg-white">
+        <h1 className="text-2xl font-bold mb-2">Tailwind v4 ✅</h1>
+        <p className="text-gray-600">Agora tá estilizando de verdade.</p>
+        <button className="mt-4 px-4 py-2 rounded-xl bg-black text-white hover:opacity-80">
+          Botão
+        </button>
+      </div>
     </div>
   );
 }
