@@ -1,44 +1,13 @@
-import { useEffect, useState } from "react";
-
-export default function ThemeToggle({ className = "" }) {
-  const [isDark, setIsDark] = useState(false);
-
-  // Ler estado real do <html> ao montar
-  useEffect(() => {
-    const has = document.documentElement.classList.contains("dark");
-    setIsDark(has);
-  }, []);
-
+export default function ThemeToggle({className=""}) {
   const toggle = () => {
-    const html = document.documentElement;
-    const next = !isDark;
-    if (next) html.classList.add("dark");
-    else html.classList.remove("dark");
-    try { localStorage.setItem("theme", next ? "dark" : "light"); } catch {}
-    setIsDark(next);
+    const el = document.documentElement;
+    const next = el.classList.toggle('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', next);
   };
-
   return (
-    <button
-      onClick={toggle}
-      aria-pressed={isDark}
-      aria-label="Alternar tema"
-      title={isDark ? "Desativar modo escuro" : "Ativar modo escuro"}
-      className={`h-10 w-10 grid place-items-center rounded-xl border border-black/15 hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10 ${className}`}
-      type="button"
-    >
-      
-      {isDark ? (
-    
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-        </svg>
-      ) : (
-       
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
-          <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.8 1.8-1.8zm10.48 0l1.79-1.79 1.79 1.79-1.79 1.8-1.79-1.8zM12 4V1h0v3h0zm0 19v-3h0v3h0zM4 13H1v-2h3v2zm22 0h-3v-2h3v2zM6.76 19.16l-1.8 1.79-1.79-1.79 1.79-1.8 1.8 1.8zM19.24 19.16l1.79 1.79 1.79-1.79-1.79-1.8-1.79 1.8zM12 7a5 5 0 100 10 5 5 0 000-10z"></path>
-        </svg>
-      )}
+    <button onClick={toggle} className={`h-10 w-10 grid place-items-center rounded-xl border border-black/15 hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10 ${className}`} aria-label="Alternar tema">
+      <svg className="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.8 1.8-1.8zm10.48 0l1.79-1.79 1.79 1.79-1.79 1.8-1.79-1.8zM12 4V1h-0v3h0zm0 19v-3h0v3h0zM4 13H1v-2h3v2zm22 0h-3v-2h3v2zM6.76 19.16l-1.8 1.79-1.79-1.79 1.79-1.8 1.8 1.8zM19.24 19.16l1.79 1.79 1.79-1.79-1.79-1.8-1.79 1.8zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+      <svg className="h-5 w-5 hidden dark:block" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
     </button>
   );
 }
