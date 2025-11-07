@@ -1,7 +1,21 @@
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Hero from "./sections/Hero";
+import Projects from "./sections/Projects";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
+
 export default function App() {
   return (
-    <div className="min-h-screen grid place-items-center bg-gray-50">
-      <h1 className="text-3xl font-bold">FUNCIONOU ✅</h1>
+    <div className="bg-white text-black">
+      <Navbar />
+      <main>
+        <Hero />
+        <Projects />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
