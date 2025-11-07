@@ -1,11 +1,18 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Portfólio</title>
+    <title>SeuNome • Portfólio</title>
+    <script>
+      // dark mode persistente
+      const pref = localStorage.getItem('theme');
+      if (pref === 'dark' || (!pref && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-white text-black dark:bg-neutral-950 dark:text-neutral-100">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
