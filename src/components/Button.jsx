@@ -1,10 +1,4 @@
-export default function Button({
-  as:Comp="button",
-  variant="primary",
-  size="md",
-  className="",
-  ...props
-}) {
+export default function Button({ as:Comp="button", variant="primary", size="md", className="", ...props }) {
   const base = "press inline-flex items-center justify-center rounded-xl font-medium focus:outline-none focus-visible:ring";
   const sizes = { sm:"h-9 px-4 text-sm", md:"h-11 px-5", lg:"h-12 px-6 text-lg" };
   const variants = {

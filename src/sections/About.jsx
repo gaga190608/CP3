@@ -6,8 +6,7 @@ export default function About() {
       <div className="mt-4 grid gap-6 sm:grid-cols-2">
         <p className="text-black/80 dark:text-white/80">
           Meu nome é Gabrielle Calazans Zollner, tenho 18 anos e estou cursando o
-          2º semestre de Engenharia de Software. Hoje meu foco está em desenvolvimento
-          Front-End, criando interfaces modernas usando React, Vite e Tailwind.
+         1º semestre de Engenharia de Software. Hoje meu foco está em desenvolvimento em todas as disciplinas.
         </p>
 
         <ul className="text-sm text-black/70 dark:text-white/70 space-y-2">

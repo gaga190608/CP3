@@ -3,9 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>SeuNome • Portfólio</title>
+    <title>Gabrielle Calazans Zollner — Portfólio</title>
+    <meta name="description" content="Portfólio de Gabrielle Calazans Zollner — Desenvolvedora Front-End (React, Vite, Tailwind). Projetos: Passa a Bola (Global Solution), Bot Lucinda.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gabrielle Calazans Zollner — Portfólio" />
+    <meta property="og:description" content="Projetos em React e Tailwind. Global Solution: Passa a Bola. Bot de Psicologia: Lucinda." />
+    <meta property="og:type" content="website" />
+
     <script>
-      // dark mode persistente
       const pref = localStorage.getItem('theme');
       if (pref === 'dark' || (!pref && matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
@@ -13,6 +19,7 @@
     </script>
   </head>
   <body class="bg-white text-black dark:bg-neutral-950 dark:text-neutral-100">
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:p-2 focus:bg-black focus:text-white rounded">Ir para o conteúdo principal</a>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
